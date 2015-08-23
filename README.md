@@ -21,18 +21,8 @@ Installation
 UPDATE panel
 Login with a shell client(example putty.exe)
 - wget http://tyfix.nl/fos/update1.sh
-- cd /usr/local/nginx/html
-- mv /usr/local/nginx/html/config.php /tmp/
-- ##### this part will remove all changes in your edited scripts)
-- git fetch origin
-- git reset --hard origin/master
-- ####
-- rm -r /usr/local/nginx/html/cache/*
-- mv /tmp/config.php /usr/local/nginx/html
-
-You can also use the
-
-./update1.sh
+- chmod 755 ./update1.sh
+- ./update1.sh
 
 Contribution
 ------------

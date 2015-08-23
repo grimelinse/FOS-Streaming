@@ -5,14 +5,19 @@
 # Install chmod 755 update1.sh && ./update1.sh
 
 echo "##UPDATE##"
+rm -r /usr/src/FOS-Streaming
 cd /usr/local/nginx/html
 mv /usr/local/nginx/html/config.php /tmp/
-git fetch origin
-git reset --hard origin/master
-rm -r /usr/local/nginx/html/cache/*
+rm -r /usr/local/nginx/html/*
+cd /usr/src/
+git clone https://github.com/zgelici/FOS-Streaming.git
+cd /usr/src/FOS-Streaming/
+mv /usr/src/FOS-Streaming/* /usr/local/nginx/html/
 mv /tmp/config.php /usr/local/nginx/html
-chown www-data:www-data /usr/local/nginx/conf
-wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx
-chmod +x /etc/init.d/nginx
-update-rc.d nginx defaults
-echo "Update finshed."
+cd /usr/local/nginx/html/
+php /usr/src/composer.phar install
+mkdir /usr/local/nginx/html/hl
+chmod -R 777 /usr/local/nginx/html/hl
+mkdir /usr/local/nginx/html/cache
+chmod -R 777 /usr/local/nginx/html/cache
+echo "Update finshed"
