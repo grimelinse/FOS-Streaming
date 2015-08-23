@@ -61,7 +61,6 @@ Todo List
 
 Issues
 ----------
-- Stream.php (Enigma2)
 - settings.php (HLS folder)
 
 Change log
@@ -72,7 +71,8 @@ Change log
 - [UPDATE] Settings (port change, change nginx config)
 - [UPDATE] install database
 - [BUG] getfile (m3u and tv fix)
-- [BUG] start stream( restream starts ffmpeg )
+- [BUG] start stream( restream starts ffmpeg ) fixed
+- [BUG] Stream.php (Enigma2) fixed
 
 
 Donations are **greatly appreciated!**

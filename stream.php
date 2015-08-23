@@ -32,8 +32,21 @@
     header("Cache-Control: no-cache, must-revalidate");
 
     if($stream->restream == false) {
-        $file = "http://".$setting->webip.":".$setting->webport."/".$setting->hlsfolder."/".$str."_.m3u8";
-        header("location: $file");
+        $readfilepad = strip_tags($str);
+        header('Content-Length: ' . filesize(".$setting->hlsfolder." . "/".$readfilepad));
+        header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+        header("Cache-Control: no-store, no-cache,must-revalidate");
+        header("Cache-Control: post-check=0, pre-check=0",false);
+        header("Pragma: no-cache");
+        header('Content-type:application/force-download');
+        header('Content-Disposition: attachment; filename='.basename($readfilepad));
+        header('Content-Length: ' . filesize(".$setting->hlsfolder." . "/".$readfilepad));
+        header('Content-Type: '.mime_content_type(".$setting->hlsfolder." . "/".$readfilepad));
+
+
+        if (strpos($_GET['file'],".ts")>1) header("Content-type: video/MP2T");
+        if (strpos($_GET['file'],"_.m3u8")>1) header("Content-type: application/x-mpegURL");
+        @readfile(".$setting->hlsfolder." . "/".$readfilepad);
     }
 
     $fd = fopen($file, "r");
