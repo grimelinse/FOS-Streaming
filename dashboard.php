@@ -1,9 +1,18 @@
 <?php
-include('config.php');
-logincheck();
 /**
  * Created by Tyfix 2015
  */
+include('config.php');
+logincheck();
+
+//Create settings if not exists
+$settings = Setting::first();
+if( is_null($settings)) {
+    $settings = new Setting;
+    $settings->webip = $_SERVER['SERVER_ADDR'];
+    $settings->webport = 8000;
+    $settings->save();
+}
 
 $all = Stream::all()->count();
 $online = Stream::where('status', '=', 1)->count();
@@ -72,5 +81,3 @@ echo $template->view()
         ->with('cpu', $cpu)
         ->with('mem', $mem)
     ->render();
-
-?>

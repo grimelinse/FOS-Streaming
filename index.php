@@ -1,11 +1,9 @@
 <?php
 include('config.php');
-if(isset($_SESSION['login_user'])){
+if(isset($_SESSION['user_id'])){
     header("location: dashboard.php");
 }
-/**
- * Created by Tyfix 2015
- */
+
 $error='';
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
@@ -19,7 +17,7 @@ if (isset($_POST['submit'])) {
         $userfind = Admin::where('username', '=', $username)->where('password', '=', md5($password))->count();
 
         if ($userfind > 0) {
-            $_SESSION['login_user'] = $username;
+            $_SESSION['user_id'] = $username;
             header("location: dashboard.php");
         } else {
 

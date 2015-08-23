@@ -1,9 +1,7 @@
 <?php
 include('config.php');
 logincheck();
-/**
- * Created by Tyfix 2015
- */
+
 if(!isset($_GET['id'])) {
     die();
 }

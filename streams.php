@@ -1,9 +1,7 @@
 <?php
 include('config.php');
 logincheck();
-/**
- * Created by Tyfix 2015
- */
+
 $message = [];
 $title = "All Streams";
 

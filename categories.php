@@ -1,9 +1,9 @@
 <?php
-include('config.php');
-logincheck();
 /**
  * Created by Tyfix 2015
  */
+include('config.php');
+logincheck();
 $message = [];
 
 if(isset($_GET['delete'])) {
@@ -17,4 +17,3 @@ if(isset($_GET['delete'])) {
 $categories = Category::all();
 
 echo $template->view()->make('categories')->with('categories',  $categories)->with('message', $message)->render();
-?>

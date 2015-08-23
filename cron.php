@@ -6,6 +6,8 @@ if(isset($_SERVER['SERVER_ADDR'])) {
 }
 include('config.php');
 
+//TODO:: display issue by restream if not working
+
 $setting = Setting::first();
 $streams = Stream::where('pid', '!=', 0)->where('running', '=', 1)->get();
 
@@ -38,4 +40,3 @@ foreach($streams as $stream) {
         $stream->save();
     }
 }
-?>

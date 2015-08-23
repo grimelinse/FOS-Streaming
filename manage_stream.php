@@ -1,9 +1,7 @@
 <?php
 include('config.php');
 logincheck();
-/**
- * Created by Tyfix 2015
- */
+
 $message = [];
 $title = "Create stream";
 $stream = new Stream;
@@ -65,4 +63,3 @@ echo $template->view()->make('manage_stream')
     ->with('message', $message)
     ->with('title', $title)
     ->render();
-?>

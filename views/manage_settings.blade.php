@@ -48,6 +48,7 @@
                                 <label class="control-label">Web port:</label>
                                 <div class="controls">
                                     <input type="text" name="webport" value="{{  isset($_POST['webport']) ?  $_POST['webport'] : $setting->webport}}">
+                                    <span class="label label-important">Important: restart nginx manualy ( service nginx restart )</span>
                                 </div>
                             </div>
 
@@ -55,6 +56,7 @@
                                 <label class="control-label">HLS folder:</label>
                                 <div class="controls">
                                     <input type="text" name="hlsfolder" value="{{  isset($_POST['hlsfolder']) ?  $_POST['hlsfolder'] : $setting->hlsfolder}}">
+                                    <span class="label label-important">Important: cannot be changed (BUG) hl</span>
                                 </div>
                             </div>
 

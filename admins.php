@@ -1,9 +1,9 @@
 <?php
-include('config.php');
-logincheck();
 /**
  * Created by Tyfix 2015
  */
+include('config.php');
+logincheck();
 $message = [];
 
 if(isset($_GET['delete'])) {
@@ -22,4 +22,3 @@ if(isset($_GET['delete'])) {
 $admins = Admin::all();
 
 echo $template->view()->make('admins')->with('admins',  $admins)->with('message', $message)->render();
-?>

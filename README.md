@@ -6,42 +6,32 @@ Introduction
 
 Installation
 ------------
-There are multiple ways to install FOS-Streaming.
-
-####Download:
-
-Download from Github
-
-####Using The auto install:
-Using the install.sh
-
-####Using The Command Line:
-
-**Github**
-
-- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
-- Clone to your machine
-```
-git clone https://github.com/YOUR_USERNAME/FOS-Streaming.git
-```
-
-
-Setup
-
+- login with a shell client(example putty.exe)
 - wget http://tyfix.nl/fos/install.sh
 - chmod 755 install.sh
 - ./install.sh
-- follow the instructions
-- ### Auto install is done
-- upload database.sql
 - edit database connection in config.php
+- Create database tables
+   - 2 versions
+        - normal install (first install) URL: http://xxx.xxx.xxx.xxx/install.php?install
+        - Fresh install (clean database)URL: http://xxx.xxx.xxx.xxx/install.php?install=fresh
 - go to the website and login with username: admin and password: admin
-- go to the settings tab and edit the settings like the webip
-- Add one or more categories (required to add users)
-- Add streams
-- Add users
 
 
+UPDATE panel
+Login with a shell client(example putty.exe)
+- cd /usr/local/nginx/html
+- mv /usr/local/nginx/html/config.php /tmp/
+##### this part will remove all changes in your edited scripts)
+- git fetch origin
+- git reset --hard origin/master
+##$$
+- rm -r /usr/local/nginx/html/cache/*
+- mv /tmp/config.php /usr/local/nginx/html
+
+You can also use the
+
+./update1.sh
 
 Contribution
 ------------
@@ -66,15 +56,32 @@ reserves the right to change the license of future releases.
 
 Todo List
 ---------
-- ~~ Adding comments
-- ~~ Transcode options
-- ~~ Bandwidth monitoring
-- ~~ Improve installation document
-- ~~ [installation] auto set web ip
+- Transcoding
+- Bandwidth monitoring
+- Mag devices
+- Bulk playlist insert (m3u)
+- removal panel
+- users connected
+- GEO ip
+- Limit users
+- Monitoring
+- Settings (restart nginx)
+
 
 Issues
 ----------
-- ~~ Enigma2
+- Stream.php (Enigma2)
+- settings.php (HLS folder)
+
+Change log
+----------
+23-8-2015
+- [UPDATE] [installation] auto set web ip
+- [UPDATE] Displaying warnings en errors (example: users add(create category first message, users view(no users, shows "add users" message)
+- [UPDATE] Settings (port change, change nginx config)
+- [UPDATE] install database
+- [BUG] getfile (m3u and tv fix)
+- [BUG] start stream( restream starts ffmpeg )
 
 
 Donations are **greatly appreciated!**

@@ -6,9 +6,10 @@
             <a href="index.html">Home</a>
             <i class="icon-angle-right"></i>
         </li>
-        <li><a href="#">User</a></li>
+        <li><a href="#">Manage user</a></li>
     </ul>
 
+    @if(count($categories) > 0)
     <div class="row-fluid sortable">
         <div class="box span12">
             <div class="box-header" data-original-title>
@@ -89,5 +90,12 @@
     <!--/span-->
 
     </div><!--/row-->
+    @else
+        <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Error!</strong> You need to create an category!
+        </div>
+
+    @endif
 
 @stop

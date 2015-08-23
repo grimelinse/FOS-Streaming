@@ -119,6 +119,10 @@ do
 		chmod -R 777 /usr/local/nginx/html/hl
 		mkdir /usr/local/nginx/html/cache
 		chmod -R 777 /usr/local/nginx/html/cache
+		chown www-data:www-data /usr/local/nginx/conf
+		wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx
+        chmod +x /etc/init.d/nginx
+        update-rc.d nginx defaults
 		### database import
 		/usr/local/nginx/sbin/nginx
 		echo "done"

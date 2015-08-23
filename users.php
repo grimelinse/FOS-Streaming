@@ -1,9 +1,7 @@
 <?php
 include('config.php');
 logincheck();
-/**
- * Created by Tyfix 2015
- */
+
 $message = [];
 
 if(isset($_GET['delete'])) {
@@ -17,4 +15,3 @@ if(isset($_GET['delete'])) {
 $users = User::all();
 
 echo $template->view()->make('users')->with('users',  $users)->with('message', $message)->render();
-?>

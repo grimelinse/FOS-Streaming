@@ -1,10 +1,6 @@
 <?php
 include('config.php');
 logincheck();
-/**
- * Created by Tyfix 2015
- */
-
 
 $message = [];
 $title = "Create user";
@@ -69,4 +65,3 @@ echo $template->view()
         ->with('message', $message)
         ->with('title', $title)
     ->render();
-?>

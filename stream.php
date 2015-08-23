@@ -1,7 +1,4 @@
 <?php
-/**
- * Created by Tyfix 2015
- */
     include ("config.php");
     set_time_limit(0);
     error_reporting(0);
