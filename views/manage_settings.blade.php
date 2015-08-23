@@ -48,7 +48,7 @@
                                 <label class="control-label">Web port:</label>
                                 <div class="controls">
                                     <input type="text" name="webport" value="{{  isset($_POST['webport']) ?  $_POST['webport'] : $setting->webport}}">
-                                    <span class="label label-important">Important: restart nginx manualy ( service nginx restart )</span>
+                                    <span class="label label-important">Important: restart nginx manualy ( killall -9 nginx && /usr/local/nginx/sbin/nginx )</span>
                                 </div>
                             </div>
 
