@@ -27,9 +27,9 @@
 
     $file = $stream->streamurl;
 
-    header('Content-Type: application/octet-stream');
-    header('Connection: close');
-    header("Cache-Control: no-cache, must-revalidate");
+//    header('Content-Type: application/octet-stream');
+//    header('Connection: close');
+//    header("Cache-Control: no-cache, must-revalidate");
 
     if($stream->restream == false) {
         $readfilepad = strip_tags($str);
