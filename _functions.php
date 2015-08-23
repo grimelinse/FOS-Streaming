@@ -29,7 +29,6 @@ function stop_stream($id)
     $stream->pid = "";
     $stream->running = 0;
     $stream->status = 0;
-    $stream->action = 0;
 
     $stream->save();
 }

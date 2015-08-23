@@ -24,7 +24,7 @@ foreach($streams as $stream) {
             $stream->running = 1;
             $stream->status = 1;
 
-            foreach($streaminfo->streams as $info ) {
+            foreach((array)$streaminfo->streams as $info ) {
                 if($info->codec_type == 'video') {
                     $stream->video_codec_name = $info->codec_long_name;
                 }
