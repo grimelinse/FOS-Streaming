@@ -127,7 +127,7 @@ function generatEginxConfPort($port) {
 
         }
     }';
-    $file ='/usr/local/nginx/conf/blad.conf';
+    $file ='/usr/local/nginx/conf/nginx.conf';
     $current = ob_get_clean();
     file_put_contents($file, $current);
 }
