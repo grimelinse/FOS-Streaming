@@ -80,7 +80,7 @@ if( isset($_GET['install'])) {
             $table->string('ffprobe_path')->default('/usr/local/bin/ffprobe');
             $table->string('webport')->default('8000');
             $table->string('webip');
-            $table->string('hlsfolder')->default('hls');
+            $table->string('hlsfolder')->default('hl');
             $table->timestamps();
         });
 
