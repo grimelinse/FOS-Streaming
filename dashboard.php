@@ -15,8 +15,8 @@ if( is_null($settings)) {
 }
 
 $all = Stream::all()->count();
-$online = Stream::where('status', '=', 1)->count();
-$offline = Stream::where('status', '=', 0)->count();
+$online = Stream::where('running', '=', 1)->count();
+$offline = Stream::where('running', '=', 0)->count();
 
 
 //space
