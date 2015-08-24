@@ -33,7 +33,7 @@ foreach($streams as $stream) {
                 }
             }
         } else {
-            $stream->running = 0;
+            $stream->running = 1;
             $stream->status = 2;
         }
 
