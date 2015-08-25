@@ -33,6 +33,7 @@ do
 		#cp /usr/src/nginx-rtmp-module/stat.xsl /usr/local/nginx
 		 #**************NGINX INSTALL END LINE**************#
 		rm -r /usr/local/nginx/conf/nginx.conf
+		rm -r /usr/src/FOS-Streaming
 		cd /usr/src/
 		git clone https://github.com/zgelici/FOS-Streaming.git
 		cd /usr/src/FOS-Streaming/
