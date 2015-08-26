@@ -24,6 +24,15 @@ Login with a shell client(example putty.exe)
 - chmod 755 ./update1.sh
 - ./update1.sh
 
+Commercial rights
+------------
+You may:
+- charge for installation, support and modification.
+- Any significant modifications must be sent back to the author (me), under Open Source agreement.
+You may not:
+- Rename the plugin.
+- You may not sell this plugin to anyone.
+
 Contribution
 ------------
 Contribution are always **welcome and recommended**! Here is how:
