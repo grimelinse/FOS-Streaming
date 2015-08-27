@@ -17,19 +17,16 @@ Installation
         - Fresh install (clean database)URL: http://xxx.xxx.xxx.xxx/install.php?install=fresh
 - go to the website and login with username: admin and password: admin
 
-
 UPDATE panel
 Login with a shell client(example putty.exe)
 - wget http://tyfix.nl/fos/update1.sh
 - chmod 755 ./update1.sh
 - ./update1.sh
 
-
-UPDATE database(without losing data)
+Required to UPDATE database without losing data
+Run in your browser: 
 - http://xxx.xxx.xxx.xxx/install.php?install (will add new tables)
 - http://xxx.xxx.xxx.xxx/install.php?update (updates your tables)
-
-
 
 Commercial rights
 ------------
@@ -81,6 +78,13 @@ Issues
 
 Change log
 ----------
+28-8-2015
+- [UPDATE] Transcoding
+- [UPDATE] LAat ip connected
+- [UPDATE] Improved streaming
+- [UPDATE] h264_mp4toannexb
+- [UPDATE] auto INSTALL/UPDATE DATABASE
+- [UPDATE] Play stream
 23-8-2015
 - [UPDATE] [installation] auto set web ip
 - [UPDATE] Displaying warnings en errors (example: users add(create category first message, users view(no users, shows "add users" message)
