@@ -78,14 +78,14 @@ Issues
 
 Change log
 ----------
-28-8-2015
-- [UPDATE] Transcoding
+- *28-8-2015
+- [UPDATE] [BETA] Transcoding
 - [UPDATE] LAat ip connected
 - [UPDATE] Improved streaming
 - [UPDATE] h264_mp4toannexb
 - [UPDATE] auto INSTALL/UPDATE DATABASE
 - [UPDATE] Play stream
-23-8-2015
+- *23-8-2015
 - [UPDATE] [installation] auto set web ip
 - [UPDATE] Displaying warnings en errors (example: users add(create category first message, users view(no users, shows "add users" message)
 - [UPDATE] Settings (port change, change nginx config)
