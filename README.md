@@ -60,10 +60,12 @@ reserves the right to change the license of future releases.
 
 Todo List
 ---------
-- Transcoding
+-  [NEXT UPDATE]expire date
+-  [NEXT UPDATE]Bulk playlist insert (m3u)
+-  [NEXT UPDATE]Mag devices
+-  [NEXT UPDATE]Watermark
+-  [NEXT UPDATE]UBUNTU (Streaming issue by some people) PHP?
 - Bandwidth monitoring
-- Mag devices
-- Bulk playlist insert (m3u)
 - removal panel
 - users connected
 - GEO ip
@@ -71,10 +73,11 @@ Todo List
 - Monitoring
 - Settings (restart nginx)
 
-
 Issues
 ----------
 - settings.php (HLS folder)
+- UBUNTU (Streaming issue by some people) PHP?
+
 
 Change log
 ----------
