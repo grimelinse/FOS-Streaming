@@ -48,12 +48,33 @@
                             </div>
 
                             <div class="control-group">
+                                <label class="control-label">Bit stream filter:</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <div class="checker" id="uniform-optionsCheckbox2"><span><input type="checkbox" name="bitstreamfilter" id="" value="1" {{ $stream->bitstreamfilter ? "checked" : ""}}></span></div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
                                 <label class="control-label">Category</label>
                                 <div class="controls">
-                                    <select name="category" id="selectError3">
+                                    <select name="category" id="selectError3" data-rel="chosen">
                                         <option value='{{ $stream->category ? $stream->category->id : "" }}'>{{ $stream->category ? $stream->category->name : "Select" }}</option>
                                         @foreach($categories as $category)
                                             <option value='{{ $category->id }}'>{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Transcode profile</label>
+                                <div class="controls">
+                                    <select name="transcode" id="transcode" data-rel="chosen">
+                                        <option value='0'>No transcode</option>
+                                        @foreach($transcodes as $trans)
+                                            <option value='{{ $trans->id }}' {{ $stream->trans_id  == $trans->id ? "selected" : "" }}>{{ $trans->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

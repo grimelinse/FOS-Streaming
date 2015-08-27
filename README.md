@@ -24,6 +24,13 @@ Login with a shell client(example putty.exe)
 - chmod 755 ./update1.sh
 - ./update1.sh
 
+
+UPDATE database(without losing data)
+- http://xxx.xxx.xxx.xxx/install.php?install (will add new tables)
+- http://xxx.xxx.xxx.xxx/install.php?update (updates your tables)
+
+
+
 Commercial rights
 ------------
 You may:

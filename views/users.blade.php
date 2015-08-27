@@ -30,6 +30,7 @@
                         <th>Password</th>
                         <th>Category</th>
                         <th>File</th>
+                        <th>IP</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -45,6 +46,7 @@
                                 <a href="getfile.php?e2=true&id={{ $user->id }}" title="GET E2"><span class="label label-success">E2</span></a>
                                 <a href="getfile.php?tv=true&id={{ $user->id }}" title="GET TV"><span class="label label-success">TV</span></a>
                             </td>
+                            <td class="center">{{ $user->lastconnected_ip }}</td>
                             <td class="center">
 
                                 <a class="btn btn-info" href="manage_user.php?id={{ $user->id }}" title="Edit">

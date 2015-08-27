@@ -74,6 +74,8 @@
                     <li><a href="manage_user.php"><i class="icon-plus"></i><span class="hidden-tablet"> Add users</span></a></li>
                     <li><a href="categories.php"><i class="icon-user"></i><span class="hidden-tablet"> Category</span></a></li>
                     <li><a href="manage_category.php"><i class="icon-list"></i><span class="hidden-tablet"> Add category</span></a></li>
+                    <li><a href="transcodes.php"><i class="icon-tasks"></i><span class="hidden-tablet"> Transcode profile</span></a></li>
+                    <li><a href="manage_transcode.php"><i class="icon-plus"></i><span class="hidden-tablet"> Add transcode profile</span></a></li>
                     <li><a href="admins.php"><i class="icon-user"></i><span class="hidden-tablet"> Admin</span></a></li>
                     <li><a href="manage_admin.php"><i class="icon-plus"></i><span class="hidden-tablet"> Add admin</span></a></li>
                     <li><a href="settings.php"><i class="icon-list"></i><span class="hidden-tablet"> Settings</span></a></li>

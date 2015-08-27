@@ -97,10 +97,12 @@ if( isset($_GET['install'])) {
             $table->tinyInteger('running');
             $table->tinyInteger('status');
             $table->integer('cat_id');
+            $table->integer('trans_id');
             $table->integer('pid');
             $table->tinyInteger('restream');
             $table->string('video_codec_name');
             $table->string('audio_codec_name');
+            $table->tinyInteger('bitstreamfilter');
             $table->timestamps();
         });
         echo "created streams table <br>" . PHP_EOL;
@@ -119,4 +121,51 @@ if( isset($_GET['install'])) {
         echo "created users table <br>" . PHP_EOL;
 
     }
+
+
+    if (!in_array('transcodes', $arraynamesexist)) {
+
+        $db->schema()->create('transcodes', function ($table) {
+            $table->increments('id');
+            $table->string('name')->unique();
+
+            $table->BigInteger('probesize');
+            $table->BigInteger('analyzeduration');
+            $table->string('video_codec');
+            $table->string('audio_codec');
+            $table->string('profile');
+            $table->string('preset_values');
+            $table->string('scale');
+            $table->string('aspect_ratio');
+            $table->BigInteger('video_bitrate');
+            $table->integer('audio_channel');
+            $table->BigInteger('audio_bitrate');
+            $table->integer('fps');
+            $table->integer('minrate');
+            $table->integer('maxrate');
+            $table->integer('bufsize');
+            $table->integer('audio_sampling_rate');
+            $table->integer('crf');
+            $table->integer('threads');
+            $table->tinyInteger('deinterlance');
+            $table->timestamps();
+        });
+
+        echo "created transcodes table <br>" . PHP_EOL;
+
+    }
+}
+
+if( isset($_GET['update'])) {
+
+    $db->schema()->table('streams', function ($table) use ($db) {
+        $db->schema()->hasColumn('streams', 'bitstreamfilter') ? '' : $table->tinyInteger('bitstreamfilter');
+        $db->schema()->hasColumn('streams', 'trans_id') ? '' : $table->Integer('trans_id');
+    });
+
+    $db->schema()->table('users', function ($table) use ($db) {
+        $db->schema()->hasColumn('users', 'lastconnected_ip') ? '' : $table->string('lastconnected_ip');
+    });
+
+    echo "update <br>" . PHP_EOL;
 }

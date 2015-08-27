@@ -29,6 +29,11 @@ class Stream extends Illuminate\Database\Eloquent\Model {
         return $this->hasOne('Category', 'id', 'cat_id');
     }
 
+    public function transcode()
+    {
+        return $this->hasOne('Transcode', 'id', 'trans_id');
+    }
+
     public function getStatusLabelAttribute()
     {
         $return = [];
@@ -57,3 +62,4 @@ class Category extends Illuminate\Database\Eloquent\Model {
 
 class Admin extends Illuminate\Database\Eloquent\Model { }
 class Setting extends Illuminate\Database\Eloquent\Model { }
+class Transcode extends Illuminate\Database\Eloquent\Model { }
