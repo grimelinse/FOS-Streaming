@@ -12,8 +12,8 @@
 ```
 - **[DATABASE]** Edit your config.php (Database connection)
 - **[DATABASE]** Create database tables
-        - Normal install (first install) URL: http://host/install.php?install
-        - Fresh install (clean database)URL: http://host/install.php?install=fresh
+- - Normal install (first install) URL: http://host/install.php?install
+- - Fresh install (clean database)URL: http://host/install.php?install=fresh
 - **[BACKEND]**go to the website and login with username: admin and password: admin
 
 ### UPDATE(ONLY FOR EXISTS INSTALLATIONS)
@@ -31,11 +31,9 @@ Go to the next urls:
 
 ### Commercial rights
 ------------
-You may:
-- charge for installation, support and modification.
-- Any significant modifications must be sent back to the author (me), under Open Source agreement.
-You may not:
-- Rename the plugin.
+- You may charge for installation, support and modification.
+- You may Any significant modifications must be sent back to the author (me), under Open Source agreement.
+- You may not Rename the plugin.
 - You may not sell this plugin to anyone.
 
 ### Contribution
@@ -47,7 +45,7 @@ Contribution are always **welcome and recommended**! Here is how:
 - Make your changes
 - Create a pull request
 
-#### Contribution Requirements:
+##### Contribution Requirements:
 
 - When you contribute, you agree to give a non-exclusive license to Tyfix to use that contribution in any context as we (Tyfix) see appropriate.
 - If you use content provided by another party, it must be appropriately licensed using an [open source](http://opensource.org/licenses) license.
