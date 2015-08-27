@@ -1,34 +1,35 @@
-Introduction
-============
-
+### Introduction
+------------
 **FOS-Streaming** -- Free IPTV panel for streaming video content
 
-
-Installation
+### Installation
 ------------
 - login with a shell client(example putty.exe)
+```sh
 - wget http://tyfix.nl/fos/install.sh
 - chmod 755 install.sh
 - ./install.sh
-- edit database connection in config.php
-- Create database tables
-   - 2 versions
-        - normal install (first install) URL: http://xxx.xxx.xxx.xxx/install.php?install
-        - Fresh install (clean database)URL: http://xxx.xxx.xxx.xxx/install.php?install=fresh
-- go to the website and login with username: admin and password: admin
+```
+- **[DATABASE]** Edit your config.php (Database connection)
+- **[DATABASE]** Create database tables
+        - Normal install (first install) URL: http://host/install.php?install
+        - Fresh install (clean database)URL: http://host/install.php?install=fresh
+- **[BACKEND]**go to the website and login with username: admin and password: admin
 
-UPDATE panel
-Login with a shell client(example putty.exe)
+### UPDATE(ONLY FOR EXISTS INSTALLATIONS)
+Login with a shell client
+```sh
 - wget http://tyfix.nl/fos/update1.sh
 - chmod 755 ./update1.sh
 - ./update1.sh
+```
+### UPDATE DATABASE(ONLY FOR EXISTS INSTALLATIONS)
+Required to update database without losing data
+Go to the next urls: 
+- http://host/install.php?install (will add new tables)
+- http://host/install.php?update (updates your tables)
 
-Required to UPDATE database without losing data
-Run in your browser: 
-- http://xxx.xxx.xxx.xxx/install.php?install (will add new tables)
-- http://xxx.xxx.xxx.xxx/install.php?update (updates your tables)
-
-Commercial rights
+### Commercial rights
 ------------
 You may:
 - charge for installation, support and modification.
@@ -37,7 +38,7 @@ You may not:
 - Rename the plugin.
 - You may not sell this plugin to anyone.
 
-Contribution
+### Contribution
 ------------
 Contribution are always **welcome and recommended**! Here is how:
 
@@ -52,19 +53,19 @@ Contribution are always **welcome and recommended**! Here is how:
 - If you use content provided by another party, it must be appropriately licensed using an [open source](http://opensource.org/licenses) license.
 - Contributions are only accepted through Github pull requests.
 
-License
+### License
 -------
 Fos-Streamining is an open source project by [Tyfix](https://tyfix.nl that is licensed under [MIT](http://opensource.org/licenses/MIT). Tyfix
 reserves the right to change the license of future releases.
 
 
-Todo List
+### Todo List
 ---------
--  [NEXT UPDATE]expire date
--  [NEXT UPDATE]Bulk playlist insert (m3u)
--  [NEXT UPDATE]Mag devices
--  [NEXT UPDATE]Watermark
--  [NEXT UPDATE]UBUNTU (Streaming issue by some people) PHP?
+-  [NEXT UPDATE] expire date
+-  [NEXT UPDATE] Bulk playlist insert (m3u)
+-  [NEXT UPDATE] Mag devices
+-  [NEXT UPDATE] Watermark
+-  [NEXT UPDATE] UBUNTU (Streaming issue by some people) PHP?
 - Bandwidth monitoring
 - removal panel
 - users connected
@@ -83,10 +84,10 @@ Change log
 ----------
 - *28-8-2015
 - [UPDATE] [BETA] Transcoding
-- [UPDATE] LAat ip connected
+- [UPDATE] Last ip connected
 - [UPDATE] Improved streaming
 - [UPDATE] h264_mp4toannexb
-- [UPDATE] auto INSTALL/UPDATE DATABASE
+- [UPDATE] AUTO INSTALL/UPDATE DATABASE
 - [UPDATE] Play stream
 - *23-8-2015
 - [UPDATE] [installation] auto set web ip
