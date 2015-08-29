@@ -165,6 +165,7 @@ if( isset($_GET['update'])) {
 
     $db->schema()->table('users', function ($table) use ($db) {
         $db->schema()->hasColumn('users', 'lastconnected_ip') ? '' : $table->string('lastconnected_ip');
+        $db->schema()->hasColumn('users', 'exp_date') ? '' : $table->date('exp_date');
     });
 
     echo "update <br>" . PHP_EOL;

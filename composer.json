@@ -2,6 +2,8 @@
     "require": {
         "illuminate/database": "^5.1",
         "illuminate/events": "^5.1",
-        "philo/laravel-blade": "3.*"
+        "philo/laravel-blade": "3.*",
+        "filp/whoops": "^1.1",
+        "nesbot/carbon": "^1.20"
     }
 }

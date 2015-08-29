@@ -37,6 +37,16 @@
                                 <input type="text" name="password" value="{{  isset($_POST['password']) ?  $_POST['password'] : $user->password}}">
                             </div>
                         </div>
+
+
+                        <div class="control-group">
+                            <label class="control-label" for="date01">Exp date</label>
+                            <div class="controls">
+                                <input type="text" name="expdate" class="input-xlarge datepicker" id="date01" placeholder="0000-00-00" value="{{  isset($_POST['expdate']) ?  $_POST['expdate'] : $user->exp_date}}">
+                                <span class="help-inline">Unlimited? 0000-00-00 or Leave blank</span>
+                            </div>
+                        </div>
+
                         {{--<div class="control-group">--}}
                             {{--<label class="control-label" for="date01">Expire Date</label>--}}
                             {{--<div class="controls">--}}

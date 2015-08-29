@@ -59,8 +59,6 @@ reserves the right to change the license of future releases.
 
 #### Todo List
 ---------
--  [NEXT UPDATE] expire date
--  [NEXT UPDATE] Bulk playlist insert (m3u)
 -  [NEXT UPDATE] Mag devices
 -  [NEXT UPDATE] Watermark
 -  [NEXT UPDATE] UBUNTU (Streaming issue by some people) PHP?
@@ -79,7 +77,11 @@ reserves the right to change the license of future releases.
 
 
 #### Change log
-----------
+-----------
+- *29-8-2015
+- [UPDATE] Whoops page (debug)
+- [UPDATE] expire date
+- [UPDATE] Bulk playlist insert (m3u)
 - *28-8-2015
 - [UPDATE] [BETA] Transcoding
 - [UPDATE] Last ip connected

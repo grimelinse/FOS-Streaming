@@ -302,9 +302,9 @@ function template_functions(){
 	
 	/* ---------- Text editor ---------- */
 	$('.cleditor').cleditor();
-	
+
 	/* ---------- Datapicker ---------- */
-	$('.datepicker').datepicker();
+	$('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
 	
 	/* ---------- Notifications ---------- */
 	$('.noty').click(function(e){

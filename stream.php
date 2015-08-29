@@ -1,5 +1,6 @@
 <?php
     include ("config.php");
+    use Carbon\Carbon;
     set_time_limit(0);
     error_reporting(0);
 
@@ -19,6 +20,10 @@
     $user = User::where('username', '=', $username)->where('password', '=', $password)->where('active', '=', 1)->first();
     if (!isset($_SESSION['user_id'])){ // TODO: secret key
         $token = (!$user) ? die() : uniqid();
+    }
+
+    if($user->exp_date >=  Carbon::yesterday()) {
+        die();
     }
 
     $stream = Stream::where('name', '=', $str)->where('status', '=', 1)->first();

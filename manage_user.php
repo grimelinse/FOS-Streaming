@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 logincheck();
-
+use Carbon\Carbon;
 $message = [];
 $title = "Create user";
 $user = new User;
@@ -16,6 +16,12 @@ if (isset($_POST['submit'])) {
 
     $user->username = $_POST['username'];
     $user->password = $_POST['password'];
+    $user->exp_date = $_POST['expdate'];
+
+    if($_POST['expdate']) {
+        $user->exp_date = Carbon::parse($_POST['expdate']);
+    }
+
 
     $user->active = 0;
     if(isset($_POST['active'])) {

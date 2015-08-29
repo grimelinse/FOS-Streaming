@@ -12,4 +12,6 @@ $databasemanagar->addConnection([
     'prefix'    => '',
 ]);
 
+$debug = false;
+
 include('_load.php');

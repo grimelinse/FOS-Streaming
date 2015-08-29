@@ -16,4 +16,4 @@ $views = __DIR__ . '/views';
 $cache = __DIR__ . '/cache';
 $template = new Blade($views, $cache);
 
-$version = 1.1;
+$version = 1.2;
