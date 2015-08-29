@@ -29,6 +29,7 @@
                         <th>Name</th>
                         <th>Password</th>
                         <th>Status</th>
+                        <th>Exp date</th>
                         <th>Category</th>
                         <th>File</th>
                         <th>IP</th>
@@ -46,6 +47,13 @@
                                     <span class="label label-success">Active</span>
                                     @else
                                     <span class="label label-important">Not Active</span>
+                                @endif
+                            </td>
+                            <td class="center">
+                                @if($user->exp_date != '0000-00-00')
+                                    {{ $user->exp_date }}
+                                    @else
+                                    Unlimited
                                 @endif
                             </td>
                             <td class="center">{{ $user->category_names }}</td>
