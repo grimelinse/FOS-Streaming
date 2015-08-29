@@ -16,7 +16,8 @@
                     <h2><i class="halflings-icon todo"></i><span class="break"></span>{{ $title }}</h2>
                 </div>
                 <div class="box-content">
-                    <button class="btn btn-small btn-danger">Masa delete</button>
+                    <form action=""method="post">
+                    <input type="submit" name="mass_delete" value="Mass delete" class="btn btn-small btn-danger">
                     </br> </br>
                     @if($message)
                         <div class="alert alert-{{ $message['type'] }}">
@@ -69,6 +70,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    </form>
                 </div>
             </div>
         </div>
