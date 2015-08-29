@@ -60,6 +60,16 @@
                                 </div>
                             </div>
 
+                            <div class="control-group">
+                                <label class="control-label">Less secure streaming:</label>
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <div class="checker" id="uniform-optionsCheckbox2"><span><input type="checkbox" name="less_secure" id="" value="1" {{ $setting->less_secure ? "checked" : ""}}></span></div>
+                                    </label>
+                                </div>
+                            </div>
+
+
                             <div class="form-actions">
                                 <button type="submit" name="submit" class="btn btn-primary">Save</button>
                             </div>

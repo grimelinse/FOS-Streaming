@@ -41,18 +41,25 @@
     $file = $stream->streamurl;
 
     if($stream->restream == false) {
-        $readfilepad = strip_tags($id);
-        $fileloc = $setting->hlsfolder . "/".$readfilepad;
-        header('Content-Length: ' . filesize($fileloc));
-        header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-        header("Cache-Control: no-store, no-cache,must-revalidate");
-        header("Cache-Control: post-check=0, pre-check=0",false);
-        header("Pragma: no-cache");
-        header('Content-type:application/force-download');
-        header('Content-Disposition: attachment; filename='.basename($readfilepad));
-        header('Content-Length: ' . filesize($fileloc));
-        header('Content-Type: '.mime_content_type($fileloc));
-        @readfile($fileloc);
+
+        if($setting->less_secure) {
+            $file = "http://".$setting->webip.":".$setting->webport."/".$setting->hlsfolder."/".$id."_.m3u8";
+            header("location: $file");
+
+        } else {
+            $readfilepad = strip_tags($id);
+            $fileloc = $setting->hlsfolder . "/".$readfilepad;
+            header('Content-Length: ' . filesize($fileloc));
+            header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+            header("Cache-Control: no-store, no-cache,must-revalidate");
+            header("Cache-Control: post-check=0, pre-check=0",false);
+            header("Pragma: no-cache");
+            header('Content-type:application/force-download');
+            header('Content-Disposition: attachment; filename='.basename($readfilepad));
+            header('Content-Length: ' . filesize($fileloc));
+            header('Content-Type: '.mime_content_type($fileloc));
+            @readfile($fileloc);
+        }
     }
 
     $fd = fopen($file, "r");

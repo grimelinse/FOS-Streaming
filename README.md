@@ -79,6 +79,9 @@ reserves the right to change the license of future releases.
 #### Change log
 -----------
 - *29-8-2015
+- [UPDATE] auto create hls folder
+- [UPDATE] id based streams
+- [UPDATE] less secure streaming
 - [UPDATE] id based streams
 - [UPDATE] m3u and E2 (clients)
 - [UPDATE] Whoops page (debug)

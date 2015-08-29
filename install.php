@@ -168,5 +168,9 @@ if( isset($_GET['update'])) {
         $db->schema()->hasColumn('users', 'exp_date') ? '' : $table->date('exp_date');
     });
 
+    $db->schema()->table('settings', function ($table) use ($db) {
+        $db->schema()->hasColumn('users', 'less_secure') ? '' : $table->tinyInteger('less_secure');
+    });
+
     echo "update <br>" . PHP_EOL;
 }

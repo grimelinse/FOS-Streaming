@@ -23,8 +23,14 @@ if (isset($_POST['submit'])) {
         $port = true;
     }
 
+    $setting->less_secure = 0;
+    if(isset($_POST['less_secure'])) {
+        $setting->less_secure = 1;
+    }
+
     $setting->webip = $_POST['webip'];
-    //$setting->hlsfolder = $_POST['hlsfolder'];
+    $setting->hlsfolder = $_POST['hlsfolder'];
+    mkdir($_POST['hlsfolder'], 0777);
 
     $message['type'] = "success";
     $message['message'] = "Setting saved";
