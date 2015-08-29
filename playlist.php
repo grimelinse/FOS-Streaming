@@ -11,11 +11,11 @@ if (empty($_GET['username']) || empty($_GET['password'])) {
     die();
 }
 
-$user = User::where('username', '=', $username)->where('password', '=', $password)->where('active', '=', 1)->first();
-if (!isset($_SESSION['user_id'])){ // TODO: secret key
-
-    (!$user) ? die() : '';
+$user = User::where('username', '=', $_GET['username'])->where('password', '=', $_GET['password'])->where('active', '=', 1)->first();
+if(!$user) {
+    die();
 }
+
 
 $setting = Setting::first();
 
@@ -26,8 +26,7 @@ if(isset($_GET['e2'])) {
     foreach($user->categories as $category) {
         foreach($category->streams as $stream) {
             if($stream->running == 1) {
-                file_put_contents('/tmp/userbouquet.favourites.tv',"#SERVICE 1:0:1:0:0:0:0:0:0:0:http%3A//".$setting->webip."%3A".$setting->webport."/".$user->username."/".$user->password."/".
-                    id ."\r\n", FILE_APPEND);
+                file_put_contents('/tmp/userbouquet.favourites.tv',"#SERVICE 1:0:1:0:0:0:0:0:0:0:http%3A//".$setting->webip."%3A".$setting->webport."/".$user->username."/".$user->password."/".$stream->id ."\r\n", FILE_APPEND);
                 file_put_contents('/tmp/userbouquet.favourites.tv',"#DESCRIPTION " . $stream->name ."\r\n", FILE_APPEND);
             }
         }
@@ -54,20 +53,3 @@ if(isset($_GET['m3u'])) {
     readfile("/tmp/tv_user.m3u");
 }
 
-
-if(isset($_GET['tv'])) {
-    unlink('/tmp/Channels.txt');
-    file_put_contents('/tmp/tv_user.m3u',"", FILE_APPEND);
-    foreach($user->categories as $category) {
-        foreach($category->streams as $stream) {
-            if($stream->running == 1) {
-                file_put_contents('/tmp/Channels.txt',"ext,$stream->name,http://".$setting->webip.":".$setting->webport."/".$user->username."/".$user->password."/".$stream->name."\r\n", FILE_APPEND);
-            }
-        }
-    }
-
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="Channels.txt"');
-    readfile("/tmp/Channels.txt");
-
-}

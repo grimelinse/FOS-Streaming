@@ -45,6 +45,7 @@
         if($setting->less_secure) {
             $file = "http://".$setting->webip.":".$setting->webport."/".$setting->hlsfolder."/".$id."_.m3u8";
             header("location: $file");
+            die();
 
         } else {
             $readfilepad = strip_tags($id);

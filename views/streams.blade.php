@@ -16,6 +16,8 @@
                     <h2><i class="halflings-icon todo"></i><span class="break"></span>{{ $title }}</h2>
                 </div>
                 <div class="box-content">
+                    <button class="btn btn-small btn-danger">Masa delete</button>
+                    </br> </br>
                     @if($message)
                         <div class="alert alert-{{ $message['type'] }}">
                             {{ $message['message'] }}
@@ -26,6 +28,7 @@
                         <thead>
                         <tr>
                             <th>#</th>
+                            <th></th>
                             <th>Name</th>
                             <th>Status</th>
                             <th>Category</th>
@@ -39,6 +42,7 @@
 
                             <tr>
                                 <td class="center"> {{ $key+1 }}</td>
+                                <td class="center"><input type="checkbox" name="mselect[]" value="{{ $stream->id }}"></td>
                                 <td>{{ $stream->name }}</td>
                                 <td class="center"><span class="label label-{{ $stream->status_label['label'] }}">{{ $stream->status_label['text'] }}</span></td>
                                 <td class="center">{{ $stream->category ? $stream->category->name : '' }} </td>
@@ -68,6 +72,7 @@
                 </div>
             </div>
         </div>
+
     @else
         <div class="alert alert-info">
             <button type="button" class="close" data-dismiss="alert">×</button>
