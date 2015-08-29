@@ -24,9 +24,11 @@ if (isset($_POST['submit'])) {
                 $splitline = explode(',', $lines[$key]);
                 $name = str_replace(array(' ', ':'), array('_', '_'), $splitline[1]);
                 $exists = Stream::where('name', '=', $name)->get();
+                
+                $stream = new Stream; 
+                
                 (count($exists) > 0 ?  $stream->name = $name . "_exists" : $stream->name = $name);
                 
-                $stream = new Stream;                
                 $stream->cat_id = $_POST['category'];
                 $stream->trans_id = $_POST['transcode'];
             
@@ -43,7 +45,7 @@ if (isset($_POST['submit'])) {
                 $stream->save();
 
                 $message['type'] = "success";
-                $message['message'] = "Stream created";
+                $message['message'] = "Streams created";
 
             }
         }
