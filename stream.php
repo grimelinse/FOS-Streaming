@@ -41,7 +41,7 @@
     $file = $stream->streamurl;
 
     if($stream->restream == false) {
-        $readfilepad = strip_tags($str);
+        $readfilepad = strip_tags($id);
         $fileloc = $setting->hlsfolder . "/".$readfilepad;
         header('Content-Length: ' . filesize($fileloc));
         header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
