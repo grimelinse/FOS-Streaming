@@ -22,13 +22,9 @@ if (isset($_POST['submit'])) {
 
             if (substr($line, 0, 1) === '#') {
                 $splitline = explode(',', $lines[$key]);
-                $name = str_replace(array(' ', ':'), array('_', '_'), $splitline[1]);
-                $exists = Stream::where('name', '=', $name)->get();
-                
-                $stream = new Stream; 
-                
-                (count($exists) > 0 ?  $stream->name = $name . "_exists" : $stream->name = $name);
-                
+
+                $stream = new Stream;
+                $stream->name = $splitline[1];
                 $stream->cat_id = $_POST['category'];
                 $stream->trans_id = $_POST['transcode'];
             

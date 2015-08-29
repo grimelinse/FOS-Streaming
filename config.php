@@ -4,7 +4,7 @@ include('_start.php');
 $databasemanagar->addConnection([
     'driver'    => 'mysql',
     'host'      => 'localhost',
-    'database'  => 'fosstreaming',
+    'database'  => 'panelo',
     'username'  => 'root',
     'password'  => '',
     'charset'   => 'utf8',

@@ -24,7 +24,7 @@ function stop_stream($id)
     $setting = Setting::first();
 
     shell_exec("kill -9 " . $stream->pid);
-    shell_exec("/bin/rm -r /usr/local/nginx/html/" . $setting->hlsfolder . "/" . $stream->name . "*");
+    shell_exec("/bin/rm -r /usr/local/nginx/html/" . $setting->hlsfolder . "/" . $stream->id . "*");
 
     $stream->pid = "";
     $stream->running = 0;
@@ -49,7 +49,7 @@ function getTranscode($id) {
     $endofffmpeg = "";
     $endofffmpeg .=  $stream->bitstreamfilter ? ' -bsf h264_mp4toannexb' : '';
     $endofffmpeg .= ' -hls_flags delete_segments -hls_time 10 -hls_base_url http://'.$setting->webip.':'.$setting->webport.'/'.$setting->hlsfolder.'/';
-    $endofffmpeg .= ' -hls_list_size 8 /usr/local/nginx/html/' . $setting->hlsfolder . '/'.$stream->name.'_.m3u8  > /dev/null 2>/dev/null & echo $! ';
+    $endofffmpeg .= ' -hls_list_size 8 /usr/local/nginx/html/' . $setting->hlsfolder . '/'.$stream->id.'_.m3u8  > /dev/null 2>/dev/null & echo $! ';
 
     if($trans) {
 

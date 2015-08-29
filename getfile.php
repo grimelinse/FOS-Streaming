@@ -17,7 +17,8 @@ if(isset($_GET['e2'])) {
     foreach($user->categories as $category) {
         foreach($category->streams as $stream) {
             if($stream->running == 1) {
-                file_put_contents('/tmp/userbouquet.favourites.tv',"#SERVICE 1:0:1:0:0:0:0:0:0:0:http%3A//".$setting->webip."%3A".$setting->webport."/".$user->username."/".$user->password."/".$stream->name ."\r\n", FILE_APPEND);
+                file_put_contents('/tmp/userbouquet.favourites.tv',"#SERVICE 1:0:1:0:0:0:0:0:0:0:http%3A//".$setting->webip."%3A".$setting->webport."/".$user->username."/".$user->password."/".
+                    id ."\r\n", FILE_APPEND);
                 file_put_contents('/tmp/userbouquet.favourites.tv',"#DESCRIPTION " . $stream->name ."\r\n", FILE_APPEND);
             }
         }
@@ -34,7 +35,7 @@ if(isset($_GET['m3u'])) {
         foreach($category->streams as $stream) {
             if($stream->running == 1) {
                 file_put_contents('/tmp/tv_user.m3u', "#EXTINF:0," . $stream->name . "\r\n", FILE_APPEND);
-                file_put_contents('/tmp/tv_user.m3u', "http://" . $setting->webip . ":" . $setting->webport . "/" . $user->username . "/" . $user->password . "/" . $stream->name . "\r\n", FILE_APPEND);
+                file_put_contents('/tmp/tv_user.m3u', "http://" . $setting->webip . ":" . $setting->webport . "/" . $user->username . "/" . $user->password . "/" . $stream->id . "\r\n", FILE_APPEND);
             }
         }
     }

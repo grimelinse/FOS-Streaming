@@ -7,7 +7,7 @@
     $ip = $_SERVER['REMOTE_ADDR'];
     $username=$_GET['username'];
     $password=$_GET['password'];
-    $str=$_GET['stream'];
+    $id=$_GET['stream'];
     $setting = Setting::first();
 
     if (empty($_GET['username']) || empty($_GET['password'])) {
@@ -26,7 +26,7 @@
         die();
     }
 
-    $stream = Stream::where('name', '=', $str)->where('status', '=', 1)->first();
+    $stream = Stream::find($id)->where('status', '=', 1)->first();
     if (!isset($_SESSION['user_id'])) { // TODO: secret key
         (!$stream ? die() : "");
     }
