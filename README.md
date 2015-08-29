@@ -79,7 +79,7 @@ reserves the right to change the license of future releases.
 #### Change log
 -----------
 - *29-8-2015
-- [UPDATE] auto create hls folder
+- [UPDATE] mass delete streams
 - [UPDATE] id based streams
 - [UPDATE] less secure streaming
 - [UPDATE] id based streams
