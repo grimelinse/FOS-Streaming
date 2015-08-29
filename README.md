@@ -79,6 +79,8 @@ reserves the right to change the license of future releases.
 #### Change log
 -----------
 - *29-8-2015
+- [UPDATE] id based streams
+- [UPDATE] m3u and E2 (clients)
 - [UPDATE] Whoops page (debug)
 - [UPDATE] expire date
 - [UPDATE] Bulk playlist insert (m3u)

@@ -61,6 +61,8 @@
                                 <a href="getfile.php?m3u=true&id={{ $user->id }}" title="GET M3U"><span class="label label-success">M3U</span></a>
                                 <a href="getfile.php?e2=true&id={{ $user->id }}" title="GET E2"><span class="label label-success">E2</span></a>
                                 <a href="getfile.php?tv=true&id={{ $user->id }}" title="GET TV"><span class="label label-success">TV</span></a>
+
+                                <a href="clientsgen.php?tv=true&id={{ $user->id }}" title="Clients"><span class="label label-success">Clients</span></a>
                             </td>
                             <td class="center">{{ $user->lastconnected_ip }}</td>
                             <td class="center">
