@@ -81,6 +81,7 @@ if( isset($_GET['install'])) {
             $table->string('webport')->default('8000');
             $table->string('webip');
             $table->string('hlsfolder')->default('hl');
+            $table->tinyInteger('less_secure');
             $table->timestamps();
         });
 
@@ -115,6 +116,8 @@ if( isset($_GET['install'])) {
             $table->string('username')->unique();
             $table->string('password');
             $table->tinyInteger('active');
+            $table->string('lastconnected_ip');
+            $table->date('exp_date');
             $table->timestamps();
         });
 
