@@ -17,7 +17,7 @@
         die();
     }
 
-    $user = User::where('username', '=', $username)->where('password', '=', $password)->where('active', '=', 1)->first();
+    $user = User::where('username', '=', $username)->where('password', '=', $password)->where('active', '=', 1);
     if (!isset($_SESSION['user_id'])){ // TODO: secret key
         $token = (!$user) ? die() : uniqid();
     }
@@ -26,7 +26,7 @@
         die();
     }
 
-    $stream = Stream::find($id)->where('status', '=', 1)->first();
+    $stream = Stream::find($id)->where('status', '=', 1);
     if (!isset($_SESSION['user_id'])) { // TODO: secret key
         (!$stream ? die() : "");
     }
