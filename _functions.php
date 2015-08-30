@@ -76,7 +76,7 @@ function getTranscode($id) {
         $ffmpeg .= $trans->audio_channel ? ' -ac ' . $trans->audio_channel : '';
         $ffmpeg .= $stream->bitstreamfilter ? ' -bsf h264_mp4toannexb' : '';
         $ffmpeg .= $trans->threads ? ' -threads ' . $trans->threads : '';
-        $ffmpeg .= $trans->deinterlance ? ' -vf yadif ' . $trans->deinterlance : '';
+        $ffmpeg .= $trans->deinterlance ? ' -vf yadif' : '';
 
         $ffmpeg .= $endofffmpeg;
         return $ffmpeg;
