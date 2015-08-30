@@ -31,9 +31,10 @@ if($user->exp_date >=  Carbon::yesterday()) {
 
 $stream = Stream::find($id);
 if (!isset($_SESSION['user_id'])) { // TODO: secret key
-    ($stream->status != 1 ? die() : "");
     (!$stream ? die() : "");
 }
+
+($stream->status != 1 ? die() : "");
 
 ob_end_clean();
 ob_start();
