@@ -20,6 +20,9 @@ if (isset($_POST['submit'])) {
     $stream->cat_id = $_POST['category'];
     $stream->trans_id = $_POST['transcode'];
 
+    $stream->streamurl2 = $_POST['streamurl2'];
+    $stream->streamurl3 = $_POST['streamurl3'];
+
     $stream->restream = 0;
     if(isset($_POST['restream'])) {
         $stream->restream = 1;

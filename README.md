@@ -78,6 +78,10 @@ reserves the right to change the license of future releases.
 
 #### Change log
 -----------
+- *30-8-2015
+- [UPDATE] mass start/stop streams
+- [UPDATE] users (last viewed channel)
+- [UPDATE] backups stream url
 - *29-8-2015
 - [UPDATE] mass delete streams
 - [UPDATE] id based streams

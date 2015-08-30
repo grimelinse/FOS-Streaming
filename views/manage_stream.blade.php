@@ -25,16 +25,30 @@
                     <form class="form-horizontal" role="form" action="" method="post">
                         <fieldset>
                             <div class="control-group">
-                                <label class="control-label">Name:</label>
+                                <label class="control-label">Name*:</label>
                                 <div class="controls">
                                     <input type="text" name="name" value="{{  isset($_POST['name']) ?  $_POST['name'] : $stream->name}}">
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Streamurl:</label>
+                                <label class="control-label">Streamurl*:</label>
                                 <div class="controls">
                                     <input type="text" name="streamurl" value="{{  isset($_POST['streamurl']) ?  $_POST['streamurl'] : $stream->streamurl}}">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Streamurl2 (backup):</label>
+                                <div class="controls">
+                                    <input type="text" name="streamurl2" value="{{  isset($_POST['streamurl2']) ?  $_POST['streamurl2'] : $stream->streamurl2}}">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Streamurl3 (backup):</label>
+                                <div class="controls">
+                                    <input type="text" name="streamurl3" value="{{  isset($_POST['streamurl3']) ?  $_POST['streamurl3'] : $stream->streamurl3}}">
                                 </div>
                             </div>
 
@@ -57,7 +71,7 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Category</label>
+                                <label class="control-label">Category*</label>
                                 <div class="controls">
                                     <select name="category" id="selectError3" data-rel="chosen">
                                         <option value='{{ $stream->category ? $stream->category->id : "" }}'>{{ $stream->category ? $stream->category->name : "Select" }}</option>
@@ -72,7 +86,7 @@
                                 <label class="control-label">Transcode profile</label>
                                 <div class="controls">
                                     <select name="transcode" id="transcode" data-rel="chosen">
-                                        <option value='0'>No transcode</option>
+                                        <option value='0'>No transcode*</option>
                                         @foreach($transcodes as $trans)
                                             <option value='{{ $trans->id }}' {{ $stream->trans_id  == $trans->id ? "selected" : "" }}>{{ $trans->name }}</option>
                                         @endforeach

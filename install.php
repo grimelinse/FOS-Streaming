@@ -95,6 +95,8 @@ if( isset($_GET['install'])) {
             $table->increments('id');
             $table->string('name');
             $table->string('streamurl');
+            $table->string('streamurl2');
+            $table->string('streamurl3');
             $table->tinyInteger('running');
             $table->tinyInteger('status');
             $table->integer('cat_id');
@@ -165,6 +167,9 @@ if( isset($_GET['update'])) {
     $db->schema()->table('streams', function ($table) use ($db) {
         $db->schema()->hasColumn('streams', 'bitstreamfilter') ? '' : $table->tinyInteger('bitstreamfilter');
         $db->schema()->hasColumn('streams', 'trans_id') ? '' : $table->Integer('trans_id');
+
+        $db->schema()->hasColumn('streams', 'streamurl2') ? '' : $table->string('streamurl2');
+        $db->schema()->hasColumn('streams', 'streamurl3') ? '' : $table->string('streamurl3');
     });
 
     $db->schema()->table('users', function ($table) use ($db) {
