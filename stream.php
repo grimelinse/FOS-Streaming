@@ -47,7 +47,14 @@ $user->lastconnected_ip = $ip;
 $user->last_stream = $stream->id;
 $user->save();
 
-$file = $stream->streamurl;
+
+$url =  $stream->streamurl;
+if($stream->checker == 2) {
+    $url = $stream->streamurl2;
+}
+if($stream->checker == 3) {
+    $url =  $stream->streamurl3;
+}
 
 if($stream->restream == false) {
 
@@ -56,23 +63,10 @@ if($stream->restream == false) {
         header("location: $file");
         die();
 
-    } else {
-        $readfilepad = strip_tags($id);
-        $fileloc = $setting->hlsfolder . "/".$readfilepad;
-        header('Content-Length: ' . filesize($fileloc));
-        header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-        header("Cache-Control: no-store, no-cache,must-revalidate");
-        header("Cache-Control: post-check=0, pre-check=0",false);
-        header("Pragma: no-cache");
-        header('Content-type:application/force-download');
-        header('Content-Disposition: attachment; filename='.basename($readfilepad));
-        header('Content-Length: ' . filesize($fileloc));
-        header('Content-Type: '.mime_content_type($fileloc));
-        @readfile($fileloc);
     }
 }
 
-$fd = fopen($file, "r");
+$fd = fopen($url, "r");
 while(!feof($fd)) {
     echo fread($fd, 1024 * 5);
     ob_flush();

@@ -106,6 +106,7 @@ if( isset($_GET['install'])) {
             $table->string('video_codec_name');
             $table->string('audio_codec_name');
             $table->tinyInteger('bitstreamfilter');
+            $table->tinyInteger('checker');
             $table->timestamps();
         });
         echo "created streams table <br>" . PHP_EOL;
@@ -170,6 +171,7 @@ if( isset($_GET['update'])) {
 
         $db->schema()->hasColumn('streams', 'streamurl2') ? '' : $table->string('streamurl2');
         $db->schema()->hasColumn('streams', 'streamurl3') ? '' : $table->string('streamurl3');
+        $db->schema()->hasColumn('streams', 'checker') ? '' : $table->tinyInteger('checker');
     });
 
     $db->schema()->table('users', function ($table) use ($db) {

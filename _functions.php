@@ -38,13 +38,21 @@ function checkPid($pid) {
     return count($output) >= 2 ? true : false;
 }
 
-function getTranscode($id) {
+function getTranscode($id, $streamnumber = null) {
     $stream = Stream::find($id);
     $setting = Setting::first();
 
     $trans = $stream->transcode;
 
     $ffmpeg = $setting->ffmpeg_path;
+
+    $url =  $stream->streamurl;
+    if($streamnumber == 2) {
+        $url = $stream->streamurl2;
+    }
+    if($streamnumber == 3) {
+        $url =  $stream->streamurl3;
+    }
 
     $endofffmpeg = "";
     $endofffmpeg .=  $stream->bitstreamfilter ? ' -bsf h264_mp4toannexb' : '';
@@ -56,7 +64,7 @@ function getTranscode($id) {
         $ffmpeg .= ' -y';
         $ffmpeg .= ' -probesize ' . ($trans->probesize ? $trans->probesize : '15000000');
         $ffmpeg .= ' -analyzeduration ' . ($trans->analyzeduration ? $trans->analyzeduration : '12000000');
-        $ffmpeg .= ' -i '.'"' . "$stream->streamurl" . '"' ;
+        $ffmpeg .= ' -i '.'"' . "$url" . '"' ;
         $ffmpeg .= ' -user_agent "FOS-Streaming"';
         $ffmpeg .= ' -strict -2 -dn ';
         $ffmpeg .= $trans->scale ? ' -vf scale=' . ($trans->scale ? $trans->scale : '') : '';
@@ -82,10 +90,9 @@ function getTranscode($id) {
         return $ffmpeg;
     }
 
-    $ffmpeg .= ' -probesize 15000000 -analyzeduration 9000000 -user_agent "FOS-Streaming" -i "'.$stream->streamurl.'"';
+    $ffmpeg .= ' -probesize 15000000 -analyzeduration 9000000 -user_agent "FOS-Streaming" -i "'.$url.'"';
     $ffmpeg .= ' -c copy -c:a libvo_aacenc -b:a 128k';
     $ffmpeg .= $endofffmpeg;
-
     return $ffmpeg;
 }
 
