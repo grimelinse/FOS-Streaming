@@ -25,8 +25,10 @@ if (!isset($_SESSION['user_id'])){ // TODO: secret key
 
 
 
-if($user->exp_date <=  Carbon::today()) {
-    die();
+if($user->exp_date != "0000-00-00") {
+    if($user->exp_date <=  Carbon::today()) {
+        die();
+    }
 }
 
 $stream = Stream::find($id);
