@@ -17,7 +17,9 @@
                 </div>
                 <div class="box-content">
                     <form action=""method="post">
-                    <input type="submit" name="mass_delete" value="Mass delete" class="btn btn-small btn-danger">
+                        <input type="submit" name="mass_start" value="Mass start" class="btn btn-small btn-danger">
+                        <input type="submit" name="mass_stop" value="Mass stop" class="btn btn-small btn-danger">
+                        <input type="submit" name="mass_delete" value="Mass delete" class="btn btn-small btn-danger">
                     </br> </br>
                     @if($message)
                         <div class="alert alert-{{ $message['type'] }}">

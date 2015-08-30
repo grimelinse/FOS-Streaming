@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_id'])){ // TODO: secret key
 
 
 
-if($user->exp_date >=  Carbon::yesterday()) {
+if($user->exp_date <=  Carbon::today()) {
     die();
 }
 
@@ -42,6 +42,7 @@ ignore_user_abort(true);
 
 
 $user->lastconnected_ip = $ip;
+$user->last_stream = $stream->id;
 $user->save();
 
 $file = $stream->streamurl;

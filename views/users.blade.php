@@ -32,6 +32,7 @@
                         <th>Exp date</th>
                         <th>Category</th>
                         <th>File</th>
+                        <th>Last viewed channel</th>
                         <th>IP</th>
                         <th>Action</th>
                     </tr>
@@ -64,7 +65,22 @@
 
                                 <a href="clientsgen.php?tv=true&id={{ $user->id }}" title="Clients"><span class="label label-success">Clients</span></a>
                             </td>
-                            <td class="center">{{ $user->lastconnected_ip }}</td>
+                            <td class="center">
+                                @if($user->laststream)
+
+                                    {{ $user->laststream->name }}
+
+                                @else
+                                    Never connected
+                                @endif
+                            </td>
+                            <td class="center">
+                                @if($user->lastconnected_ip)
+                                    {{ $user->lastconnected_ip }}
+                                @else
+                                    Never connected
+                                @endif
+                            </td>
                             <td class="center">
 
                                 <a class="btn btn-info" href="manage_user.php?id={{ $user->id }}" title="Edit">

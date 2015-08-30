@@ -20,6 +20,12 @@ class User extends Illuminate\Database\Eloquent\Model {
 
         return $return;
     }
+
+
+    public function laststream()
+    {
+        return $this->hasOne('Stream', 'id', 'last_stream');
+    }
 }
 
 class Stream extends Illuminate\Database\Eloquent\Model {

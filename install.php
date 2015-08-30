@@ -118,6 +118,7 @@ if( isset($_GET['install'])) {
             $table->tinyInteger('active');
             $table->string('lastconnected_ip');
             $table->date('exp_date');
+            $table->integer('last_stream');
             $table->timestamps();
         });
 
@@ -169,10 +170,11 @@ if( isset($_GET['update'])) {
     $db->schema()->table('users', function ($table) use ($db) {
         $db->schema()->hasColumn('users', 'lastconnected_ip') ? '' : $table->string('lastconnected_ip');
         $db->schema()->hasColumn('users', 'exp_date') ? '' : $table->date('exp_date');
+        $db->schema()->hasColumn('users', 'last_stream') ? '' : $table->integer('last_stream');
     });
 
     $db->schema()->table('settings', function ($table) use ($db) {
-        $db->schema()->hasColumn('users', 'less_secure') ? '' : $table->tinyInteger('less_secure');
+        $db->schema()->hasColumn('settings', 'less_secure') ? '' : $table->tinyInteger('less_secure');
     });
 
     echo "update <br>" . PHP_EOL;
